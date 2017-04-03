@@ -14,6 +14,10 @@
 - lines.Length - неправильный вызов метода length
 - string result - переменная не инициализирована
 
+2. Логика
+В аргумент метода Concat(string[] lines) может прити пустой массив, предлагаю поставить условие: 
+проверить длину массива
+
 
  public int Parse(Object o) {
         int integer = 0;
@@ -27,6 +31,8 @@
 
     public String Concat(String[] lines) {
         String result = "";
+        if(lines.length == 0)
+            result = "пустой массив";
         for(int i = 0; i < lines.length; i++) {
             result += lines[i];
         }
